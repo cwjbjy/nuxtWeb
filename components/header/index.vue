@@ -31,15 +31,3 @@
   }
 }
 </style>
-<style>
-.el-input__inner {
-  border-radius: 0;
-  border: 1px solid #fe8900;
-}
-.el-input-group__append,
-.el-input-group__prepend {
-  background: #fe8900;
-  color: #fff;
-  border: 0;
-}
-</style>
