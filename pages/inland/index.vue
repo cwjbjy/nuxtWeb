@@ -1,11 +1,10 @@
 <template>
   <article>
-    <Card :url="'/toutiao.png'" :source="List">今日头条</Card>
+    <Card :url="'/guonei.png'" :source="List">最新国内</Card>
   </article>
 </template>
 
 <script>
-// import list from "../assets/mock/homePage";
 export default {
   data() {
     return {
@@ -14,22 +13,22 @@ export default {
   },
   async asyncData({ store, app }) {
     let params = {
-      type: "top",
+      type: "guonei",
       key: store.state.key,
     };
-    let { data } = await app.$axios.get("/toutiao/index", { params: params });
+    let { data } = await app.$axios("/toutiao/index", { params: params });
     return {
       List: data.result.data,
     };
   },
   head() {
     return {
-      title: "今日头条",
+      title: "最新国内",
       meta: [
         {
           name: "description",
           hid: "description",
-          content: "今日头条，时时获取新闻",
+          content: "最新国内，获取国内新闻",
         },
       ],
     };
